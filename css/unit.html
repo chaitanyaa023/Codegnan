@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+            background-color: yellow;
+        }
+        p{
+            color: blue;
+            background-color: green;
+        }
+        @media (min-width: 720px){
+            h1{
+                color: green;
+                background-color: red;
+            }
+            p{
+                color: yellow;
+                background-color: blue;
+            }
+        }
+        @media (min-width: 1024px){
+            h1{
+                color: blue;
+                background-color: green;
+            }
+            p{
+                color: red;
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Header1</h1>
+    <p>Paragraph</p>
+</body>
+</html>
