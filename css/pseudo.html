@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            color: black;
+            font-size: 20px;
+        }
+        a:hover{
+            color: red;
+        }
+        a:active{
+            color: green;
+        }
+        a:visited{
+            color: blue;
+        }
+        .items ul li:nth-child(even){
+            background-color: grey;
+        }
+        .items ul li:nth-child(3n){
+            color: red;
+        }
+        .para::before{
+            content: "**";
+        }
+        .para::after{
+            content: "**";
+        }
+        .para::first-letter{
+            color:red;
+        }
+        #web::selection{
+            background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+    <a href="www.google.com">Google</a>
+    <div class="items">
+        <ul>
+            <li>Item1</li>
+            <li>Item2</li>
+            <li>Item3</li>
+            <li>Item4</li>
+            <li>Item5</li>
+            <li>Item6</li>
+        </ul>
+    </div>
+    <p class="para">Website</p>
+    <p id="web">Website Development Role</p>
+</body>
+</html>
