@@ -5,25 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: #FC4F27;
+            font-family: "futura", sans-serif;
+        }
         #header{
             display: flex;
             justify-content: space-between;
-            background-color: lightgray;
+            background-color: #FC4F27;
             align-items: center;
             
         }
         #logo{
-            color: black;
+            color: white;
             display: flex;
             justify-content: left;
+            padding: 10px;   
+        }
+        #logoimg{
             padding: 10px;
-            
+            border-radius: 13px;
         }
         #header-right{
             display: flex;
-            justify-content: right;
+            align-items: center;
             padding: 10px;
             justify-content: flex-end;
+            gap: 10px;
+        }
+        #getappbutton{
+            background-color: red;
+            color: black;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #h1p{
+            color: white;
+        }
+        .location {
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            font-size: 16px;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .search-bar {
+            width: 300px;
+            padding: 10px; 
+            border-radius: 25px;
+            border: none;
+            font-size: 16px;
+        }
+        .body{
+            display: flex;
+            justify-content:center;
+        }
+        #search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
             gap: 10px;
         }
     </style>
@@ -31,14 +77,33 @@
 <body>
     <header id="header">
         <div id="logo">
-            <p>Get the App</p>
+            <img src="swig.png" alt="Swiggy Logo" height="35" width="35" id="logoimg">
+            <p><b>Swiggy</b></p>
         </div>
         <div id="header-right">
-            <a href="#investor relations">Investor Relations</a><br>
-            <br>
-            <a href="#add restaurant">Add Restaurant</a>
+            <a href="#investor relations">Swiggy Corporate</a>
+            <a href="#add restaurant">Partner With Us</a>
+            <button id="getappbutton">Get the App</button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.5" stroke="currentColor" class="size-6" height="25" width="25">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+            </svg>    
         </div>
-        
     </header>
+    <div class="body">
+        <h1 id="h1p">Order food & groceries. Discover <br> best restaurants. Swiggy it!</h1>
+    </div>
+    <div id="search">
+        <select name="location" id="location" class="location">
+            <option value="" selected disabled>Enter your location</option>
+            <option value="Pragathi Nagar">Pragathi Nagar</option>
+            <option value="Jubilee Hills">Jubilee Hills</option>
+            <option value="Secunderabad">Secunderabad</option>
+            <option value="Ameerpet">Ameerpet</option>
+        </select>
+        <div class="search-container">
+            <input type="text" placeholder="Search for restaurants or dishes..." class="search-bar">
+        </div>
+    </div>    
+    
 </body>
 </html>
