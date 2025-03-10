@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #linear{
+            background: linear-gradient(to right, red, yellow);
+        }
+        #radial{
+            height: 300px;
+            width: 300px;
+            background: radial-gradient(circle, red, yellow);
+        }
+        #conic{
+            height: 300px;
+            width: 300px;
+            background: conic-gradient(red, yellow, green, blue);
+        }
+        .box1{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            transition: background-color 2s ease;
+        }
+        .box1:hover{
+            background-color: red;   
+        }
+        #btn{
+            height: 20px;
+            width: 50px;
+            background-color: greenyellow;
+            transition: background-color 2s ease;
+        }
+        #btn:hover{
+            background-color: red;
+        }
+        #btn:active{
+            background-color: blue;
+        }
+        .box2{
+            height:150px;
+            width: 150px;
+            background-color: yellow;
+            transition: transform 3s ease;
+            margin: 500px;
+        }
+        .box2:hover{
+            transform: scale(2) rotate(45deg);
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="linear">
+        <p>Linear</p>
+    </div>
+    <div id="radial">
+        <p>Radial</p>
+    </div>
+    <div id="conic">
+        <p>Conic</p>
+    </div>
+    <div class="box1">
+        <p>Box1</p>
+    </div><br>
+    <button id="btn">
+        button
+    </button>
+    <div class="box2">
+        <p>Transform</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+        animation-name: example;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;        
+    }
+    @keyframes example{
+        0%{background-color: yellow; }
+        25%{background-color: red;}
+    50%{background-color: green;}
+    75%{background-color: blue;}
+    100%{background-color: yellow;}
+    }
+    .parent{
+        position:relative;
+        height: 250px;
+        width: 250px;
+        
+        background-color: rgb(10, 203, 10);
+    }
+    .child{
+        position: absolute;
+        top:50px;
+        left: 50px;
+        
+        background-color: rgb(10, 10, 203);   
+    }
+    #fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 100%;
+        background-color: rgb(10, 113, 203);
+    }
+    .sticky{
+        position: sticky;
+        top: 50px;
+        left: 50px;
+        background-color: rgb(10, 203, 71);
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div><br>
+    <div style="display:table; border:1px solid black; border-spacing: 10px;">
+        <div style="display:table-row;">
+            <div style="display:table-cell; background-color: blue;">
+                <p>Table Cell 1</p>
+            </div>
+            <div style="display:table-cell; background-color: yellow;">
+                <p>Table Cell 2</p>
+            </div>
+            <div style="display:table-cell; background-color: green;">
+                <p>Table Cell 3</p>
+            </div>
+        </div>
+        <div style="display:table-row; gap:10px; padding:10px;">
+            <div style="display:table-cell; background-color: green;">
+                <p>Table Cell 4</p>
+            </div>
+            <div style="display:table-cell; background-color: blue;">
+                <p>Table Cell 5</p>
+            </div>
+            <div style="display:table-cell; background-color: yellow;">
+                <p>Table Cell 6</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="parent">
+        <div class="child">
+            ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+        </div>
+    </div>
+    <div id="fixed">
+        <p>Fixed</p>
+    </div>
+    <div class="sticky">
+        <p>Sticky</p>
+    </div>
+</body>
+</html>
