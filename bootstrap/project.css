@@ -1,0 +1,24 @@
+.dropdown-menu {
+  background-color: #f8f9fa;
+}
+.dropdown-item {
+  color: #212529;
+}
+.dropdown-item a:hover {
+  background-color: #e9ecef;
+}
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+.header{
+  display: flex;
+}
+.nav{
+  display: flex;
+  width: 100%;
+}
+.modern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
