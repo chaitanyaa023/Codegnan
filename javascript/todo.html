@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Dynamic To-Do List</h1>
+  <input type="text" id="itemInput" placeholder="Enter an item">
+  <button id="addItemButton">Add item</button>
+  <ul id="itemList"></ul>
+  <script>
+    let inputEle = document.getElementById("itemInput")
+    let buttonEle = document.getElementById("addItemButton")
+    let ulEle = document.getElementById("itemList")
+    buttonEle.addEventListener("click",()=>{
+      if(inputEle.value!==""){
+        let liEle = document.createElement("li")
+        liEle.textContent=inputEle.value
+        ulEle.appendChild(liEle)
+        inputEle.value=""
+      }})
+  </script>
+</body>
+</html>
