@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Weather App</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -84,14 +85,9 @@
         return;
       }
 
-      fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
+      axios.get(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
         .then(response => {
-          if (!response.ok) {
-            throw new Error("City not found");
-          }
-          return response.json();
-        })
-        .then(data => {
+          const data = response.data;
           weatherBox.innerHTML = `
             <h2>Weather in ${data.location.name}, ${data.location.country}</h2>
             <img src="${data.current.condition.icon}" alt="Icon" class="icon">
@@ -102,7 +98,7 @@
           `;
         })
         .catch(error => {
-          weatherBox.innerHTML = `<p>${error.message}</p>`;
+          weatherBox.innerHTML = `<p>${error.response ? error.response.data.error.message : 'Error fetching data.'}</p>`;
         });
     }
   </script>
