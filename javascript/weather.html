@@ -2,10 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+      color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #fff;
+      color: #2193b0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .weather-box {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      min-width: 250px;
+    }
+
+    .temp {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .desc {
+      font-size: 24px;
+    }
+
+    .icon {
+      width: 64px;
+    }
+  </style>
 </head>
 <body>
-  
+
+  <h1>🌦 Weather App</h1>
+  <div>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+  </div>
+
+  <div class="weather-box" id="weatherBox">
+    <p>Search for a city's weather above ☝️</p>
+  </div>
+
+  <script>
+    const apiKey = '4df077dd89374126954114846250904';
+
+    function getWeather() {
+      const city = document.getElementById('cityInput').value.trim();
+      const weatherBox = document.getElementById('weatherBox');
+
+      if (!city) {
+        weatherBox.innerHTML = "<p>Please enter a city name.</p>";
+        return;
+      }
+
+      fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("City not found");
+          }
+          return response.json();
+        })
+        .then(data => {
+          weatherBox.innerHTML = `
+            <h2>Weather in ${data.location.name}, ${data.location.country}</h2>
+            <img src="${data.current.condition.icon}" alt="Icon" class="icon">
+            <div class="temp">${data.current.temp_c}°C</div>
+            <div class="desc">${data.current.condition.text}</div>
+            <p>Humidity: ${data.current.humidity}%</p>
+            <p>Wind: ${data.current.wind_kph} km/h</p>
+          `;
+        })
+        .catch(error => {
+          weatherBox.innerHTML = `<p>${error.message}</p>`;
+        });
+    }
+  </script>
+
 </body>
 </html>
