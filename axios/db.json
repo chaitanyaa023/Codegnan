@@ -1,0 +1,10 @@
+{
+  "student1":{
+    "id":"1",
+    "name": "Chaitanya"
+  },
+  "student2":{
+    "id": "2",
+    "name": "John Doe"
+  }
+}

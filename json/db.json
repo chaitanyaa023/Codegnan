@@ -1,0 +1,50 @@
+{
+  "weather_data": [
+    {
+      "city": "Los Angeles",
+      "temperature_celsius": 26,
+      "humidity_percent": 55,
+      "wind_speed_kph": 10,
+      "weather_description": "Sunny",
+      "datetime": "2025-04-21T14:00:00",
+      "id": "98f7"
+    },
+    {
+      "city": "Chicago",
+      
+      "temperature_celsius": 18,
+      "humidity_percent": 65,
+      "wind_speed_kph": 20,
+      "weather_description": "Overcast",
+      "datetime": "2025-04-21T14:00:00",
+      "id": "b57a"
+    },
+    {
+      "city": "Houston",
+      "temperature_celsius": 30,
+      "humidity_percent": 70,
+      "wind_speed_kph": 12,
+      "weather_description": "Hot and humid",
+      "datetime": "2025-04-21T14:00:00",
+      "id": "0539"
+    },
+    {
+      "city": "Seattle",
+      "temperature_celsius": 16,
+      "humidity_percent": 75,
+      "wind_speed_kph": 18,
+      "weather_description": "Rainy",
+      "datetime": "2025-04-21T14:00:00",
+      "id": "3a50"
+    },
+    {
+      "id": "ab0c",
+      "city": "Hyderabad",
+      "temperature_celsius": 22,
+      "humidity_percent": 60,
+      "wind_speed_kph": 15,
+      "weather_description": "Partly cloudy",
+      "datetime": "2025-04-21T14:00:00"
+    }
+  ]
+}
